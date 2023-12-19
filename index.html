@@ -19,17 +19,51 @@
     <div id="app" style="display: none">
       <section>
         <h2>乗り合い検索</h2>
+        <select id="departureArea">
+          <option value="上分">上分</option>
+          <option value="下分">下分</option>
+          <option value="神領">神領</option>
+          <option value="広野">広野</option>
+          <option value="阿川">阿川</option>
+          <option value="鬼籠野">鬼籠野</option>
+        </select>
         <input
           type="text"
-          id="departure"
-          placeholder="出発地を入力してください"
+          id="customDeparture"
+          placeholder="具体的な出発地"
           required />
+
+        <select id="locationType">
+          <option value="town">町内</option>
+          <option value="out_of_town">町外</option>
+        </select>
+
+        <div id="inTownOptions" style="display: none">
+          <select id="inTownCategories">
+            <option value="">カテゴリーを選択してください</option>
+            <option value="hospital">病院</option>
+            <option value="pharmacy">薬局</option>
+            <option value="care_center">介護センター</option>
+            <option value="post_office">郵便局</option>
+            <option value="other">その他</option>
+          </select>
+          <select id="inTownSelection" style="display: none">
+            <!-- カテゴリーに基づいて動的にオプションが挿入される -->
+          </select>
+          <input
+            type="text"
+            id="otherInTown"
+            placeholder="その他の場所を入力"
+            style="display: none" />
+        </div>
+
         <input
           type="text"
-          id="destination"
-          placeholder="目的地を入力してください"
+          id="customDestination"
+          placeholder="具体的な目的地"
           required />
         <input type="datetime-local" id="departureTime" required />
+
         <select id="riders">
           <option value="1">1人</option>
           <option value="2">2人</option>
@@ -41,6 +75,8 @@
         <h2>募集中のリスト</h2>
         <ul id="rideList"></ul>
       </section>
+      <!-- 仮のマップ表示エリア -->
+      <div id="map" style="width: 100%; height: 400px"></div>
     </div>
 
     <script src="scripts.js"></script>
