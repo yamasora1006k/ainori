@@ -72,3 +72,5 @@ document.getElementById("searchBtn").addEventListener("click", function () {
   document.getElementById("destination").value = "";
   document.getElementById("departureTime").value = "";
 });
+
+//test
