@@ -21,14 +21,26 @@ document.getElementById("loginBtn").addEventListener("click", function () {
   }
 });
 
+document.getElementById("locationType").addEventListener("change", function () {
+  var locationType = document.getElementById("locationType").value;
+  if (locationType === "town") {
+    document.getElementById("inTownOptions").style.display = "block";
+    // 町内の選択肢を表示するロジックを追加
+  } else {
+    document.getElementById("inTownOptions").style.display = "none";
+  }
+});
+
 document.getElementById("searchBtn").addEventListener("click", function () {
-  var departure = document.getElementById("departure").value;
+  var departureArea = document.getElementById("departureArea").value;
+  var customDeparture = document.getElementById("customDeparture").value;
   var destination = document.getElementById("destination").value;
   var departureTimeInput = document.getElementById("departureTime").value;
   var riders = document.getElementById("riders").value;
 
   if (
-    departure.trim() === "" ||
+    departureArea.trim() === "" ||
+    customDeparture.trim() === "" ||
     destination.trim() === "" ||
     departureTimeInput.trim() === ""
   ) {
@@ -51,26 +63,26 @@ document.getElementById("searchBtn").addEventListener("click", function () {
 
   if (matchedRide) {
     alert(
-      `マッチする乗り合いが見つかりました：出発地: ${matchedRide.departure}, 目的地: ${matchedRide.destination}, 出発時間: ${matchedRide.departureTime}, 乗車希望者: ${matchedRide.riders}`
+      `マッチする乗り合いが見つかりました：出発地: ${matchedRide.departureArea}, 目的地: ${matchedRide.destination}, 出発時間: ${matchedRide.departureTime}, 乗車希望者: ${matchedRide.riders}`
     );
   } else {
     var newRide = {
-      departure,
+      departureArea,
+      customDeparture,
       destination,
       departureTime: departureTime.toISOString(),
       riders,
     };
     rides.push(newRide);
     var listItem = document.createElement("li");
-    listItem.textContent = `出発地: ${departure}, 目的地: ${destination}, 出発時間: ${departureTime.toLocaleString()}, 乗車希望者: ${riders}人`;
+    listItem.textContent = `出発地区: ${departureArea}, 出発地: ${customDeparture}, 目的地: ${destination}, 出発時間: ${departureTime.toLocaleString()}, 乗車希望者: ${riders}人`;
     rideList.appendChild(listItem);
     alert("マッチする乗り合いが見つかりませんでした。新たに募集を開始します。");
   }
 
   // フォームをクリアする
-  document.getElementById("departure").value = "";
+  document.getElementById("departureArea").value = "";
+  document.getElementById("customDeparture").value = "";
   document.getElementById("destination").value = "";
   document.getElementById("departureTime").value = "";
 });
-
-//test
