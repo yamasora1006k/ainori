@@ -25,11 +25,43 @@ document.getElementById("locationType").addEventListener("change", function () {
   var locationType = document.getElementById("locationType").value;
   if (locationType === "town") {
     document.getElementById("inTownOptions").style.display = "block";
-    // 町内の選択肢を表示するロジックを追加
   } else {
     document.getElementById("inTownOptions").style.display = "none";
   }
 });
+
+document
+  .getElementById("inTownCategories")
+  .addEventListener("change", function () {
+    var category = document.getElementById("inTownCategories").value;
+    var inTownSelection = document.getElementById("inTownSelection");
+    var otherInTown = document.getElementById("otherInTown");
+
+    // 以前の選択肢をクリアする
+    inTownSelection.innerHTML = "";
+    otherInTown.style.display = "none";
+
+    if (category === "hospital") {
+      var hospitals = [
+        "神山病院",
+        "中谷病院",
+        "佐々木外科内科",
+        "山田歯科病院",
+        "COCO歯科",
+      ];
+      hospitals.forEach(function (hospital) {
+        var option = document.createElement("option");
+        option.value = hospital;
+        option.textContent = hospital;
+        inTownSelection.appendChild(option);
+      });
+      inTownSelection.style.display = "block";
+    } else if (category === "other") {
+      otherInTown.style.display = "block";
+    } else {
+      inTownSelection.style.display = "none";
+    }
+  });
 
 document.getElementById("searchBtn").addEventListener("click", function () {
   var departureArea = document.getElementById("departureArea").value;
