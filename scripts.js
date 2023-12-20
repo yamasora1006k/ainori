@@ -71,8 +71,22 @@ document
         inTownSelection.appendChild(option);
       });
       inTownSelection.style.display = "block";
-    } else if (category === "other") {
-      otherInTown.style.display = "block";
+    } else if (category === "care_center") {
+      var careCenters = [
+        "神山すだち園特別養護老人ホーム",
+        "寿泉園養護老人ホーム",
+        "かじかの郷介護老人保健施設",
+        "あいの郷グループホーム",
+        "地域包括支援センター",
+        "高齢者生産活動センター",
+      ];
+      careCenters.forEach(function (careCenter) {
+        var option = document.createElement("option");
+        option.value = careCenter;
+        option.textContent = careCenter;
+        inTownSelection.appendChild(option);
+      });
+      inTownSelection.style.display = "block";
     } else {
       inTownSelection.style.display = "none";
     }
