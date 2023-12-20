@@ -73,10 +73,10 @@ document
       inTownSelection.style.display = "block";
     } else if (category === "care_center") {
       var careCenters = [
-        "神山すだち園特別養護老人ホーム",
-        "寿泉園養護老人ホーム",
-        "かじかの郷介護老人保健施設",
-        "あいの郷グループホーム",
+        "神山すだち園 特別養護老人ホーム",
+        "寿泉園 養護老人ホーム",
+        "かじかの郷 介護老人保健施設",
+        "あいの郷 グループホーム",
         "地域包括支援センター",
         "高齢者生産活動センター",
       ];
@@ -84,6 +84,23 @@ document
         var option = document.createElement("option");
         option.value = careCenter;
         option.textContent = careCenter;
+        inTownSelection.appendChild(option);
+      });
+      inTownSelection.style.display = "block";
+    } else if (category === "post_office") {
+      var post_officies = [
+        "神山郵便局",
+        "寄井郵便局",
+        "今井郵便局",
+        "川又郵便局",
+        "鬼籠野郵便局",
+        "阿野郵便局",
+        "広野郵便局",
+      ];
+      post_officies.forEach(function (post_officies) {
+        var option = document.createElement("option");
+        option.value = post_officies;
+        option.textContent = post_officies;
         inTownSelection.appendChild(option);
       });
       inTownSelection.style.display = "block";
