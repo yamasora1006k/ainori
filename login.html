@@ -10,7 +10,11 @@
   </head>
   <body>
     <div class="login-container">
-      <img src="乗りたく.png" alt="RUKタクシーのロゴ" class="logo" />
+      <!-- 指定されたGoogleドライブの画像を使用 -->
+      <img
+        src="https://drive.google.com/uc?export=view&id=1b5kTZTW6aFGfYYV6S8DKQifRtPVTv6Nd"
+        alt="RUKタクシーのロゴ"
+        class="logo" />
       <form id="loginForm">
         <div class="form-group">
           <label for="username">ユーザー名</label>
@@ -44,11 +48,16 @@
         </div>
         <div class="error-message" id="error-message"></div>
       </form>
+      <!-- アイコン設定画面 -->
+      <div class="icon-setup" style="display: none">
+        <label for="iconInput">アイコン選択</label>
+        <input type="file" id="iconInput" name="icon" accept="image/*" />
+        <div class="icon-preview" id="iconPreview"></div>
+        <button type="button" id="loginButton">ログイン</button>
+      </div>
     </div>
-    <!-- ここにアイコン設定のHTMLを挿入 -->
-    <!-- ここにログインボタンのHTMLを挿入 -->
     <!-- ホーム画面へのリンクは、以下のコメントに<a>タグを挿入してください。 -->
     <!-- <a href="home.html">ホーム画面に移動</a> -->
-    <script src="script.js"></script>
+    <script src="script1.js"></script>
   </body>
 </html>
