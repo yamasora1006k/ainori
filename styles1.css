@@ -66,3 +66,23 @@ button#nextButton:hover {
   color: red;
   height: 20px;
 }
+
+button {
+  background: linear-gradient(
+    to right,
+    #4e54c8,
+    #8f94fb
+  ); /* グラデーションの背景 */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* ソフトな影 */
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* ホバー時の影を強く */
+  transform: translateY(-2px); /* ホバー時に少し持ち上がる */
+}

@@ -60,9 +60,22 @@
       </form>
       <!-- アイコン設定画面 -->
       <div class="icon-setup" style="display: none">
-        <label for="iconInput">アイコン選択</label>
-        <input type="file" id="iconInput" name="icon" accept="image/*" />
-        <div class="icon-preview" id="iconPreview"></div>
+        <label for="iconInput" class="icon-label">
+          <div class="icon-preview" id="iconPreview" style="cursor: pointer">
+            <!-- この中に画像を設定 -->
+            <img
+              src="https://drive.google.com/uc?export=view&id=15_My2HMM2_yTAUkfEmNxlWcVJt1A4Kzw"
+              alt="アイコンプレビュー"
+              id="iconImage"
+              style="width: 100%; height: 100%" />
+          </div>
+        </label>
+        <input
+          type="file"
+          id="iconInput"
+          name="icon"
+          accept="image/*"
+          style="display: none" />
         <button type="button" id="loginButton">ログイン</button>
       </div>
     </div>

@@ -29,11 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   iconInput.addEventListener("change", function (event) {
     const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      iconPreview.style.backgroundImage = `url(${e.target.result})`; // プレビューにアイコンを表示
-    };
-    reader.readAsDataURL(file);
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById("iconImage").src = e.target.result; // プレビューにアイコンを表示
+      };
+      reader.readAsDataURL(file);
+    }
   });
 
   function validateInputs() {
