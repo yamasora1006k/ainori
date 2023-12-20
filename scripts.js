@@ -56,6 +56,21 @@ document
         inTownSelection.appendChild(option);
       });
       inTownSelection.style.display = "block";
+    } else if (category === "pharmacy") {
+      // 薬局の選択肢を追加
+      var pharmacies = [
+        "エンゼル調剤薬局",
+        "大草ドラッグ",
+        "大黒屋",
+        "橋本薬品",
+      ];
+      pharmacies.forEach(function (pharmacy) {
+        var option = document.createElement("option");
+        option.value = pharmacy;
+        option.textContent = pharmacy;
+        inTownSelection.appendChild(option);
+      });
+      inTownSelection.style.display = "block";
     } else if (category === "other") {
       otherInTown.style.display = "block";
     } else {
