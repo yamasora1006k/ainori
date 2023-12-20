@@ -59,11 +59,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
-
-nextButton.addEventListener("click", function () {
-  console.log("次へボタンがクリックされました。"); // デバッグ用のログ出力
-  if (validateInputs()) {
-    loginForm.style.display = "none"; // ログインフォームを隠す
-    document.querySelector(".icon-setup").style.display = "block"; // アイコン設定を表示
-  }
-});
