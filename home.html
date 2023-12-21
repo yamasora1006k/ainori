@@ -9,29 +9,29 @@
     <link rel="stylesheet" href="home.css" />
   </head>
   <body>
-    <div id="background-overlay"></div>
-    <!-- 背景の白い壁紙 -->
+    <!-- 背景画像のセクション -->
+    <div class="background">
+      <img
+        src="path_to_your_background_image"
+        alt="背景画像"
+        class="background-image" />
+    </div>
 
-    <header>
-      <div id="logo-container">
-        <img src="logo.png" alt="ロゴ" id="logo" />
-        <!-- ロゴの画像 -->
-      </div>
-    </header>
+    <!-- ロゴ -->
+    <div class="logo-container">
+      <img src="path_to_your_logo_image" alt="ロゴ" class="logo" />
+    </div>
 
-    <main>
-      <div id="content-container">
-        <h1 id="main-title">NORITAKU</h1>
-        <!-- コメント機能のプレースホルダー（後でJSで動的に生成） -->
-        <div id="comments-container"></div>
-      </div>
-    </main>
+    <!-- メインコンテンツ -->
+    <div class="main-content">
+      <h1 class="title" onclick="location.href='index.html'">NORITAKU</h1>
+      <!-- コメント機能のプレースホルダーはJavaScriptで実装 -->
+    </div>
 
-    <aside>
-      <div id="user-icon-container">
-        <img src="user_icon.png" alt="ユーザーアイコン" id="user-icon" />
-      </div>
-    </aside>
+    <!-- ユーザーアイコン -->
+    <div class="user-icon" onclick="location.href='login_icon.html'">
+      <!-- アイコン画像を挿入 -->
+    </div>
 
     <script src="home.js"></script>
   </body>

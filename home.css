@@ -1,5 +1,5 @@
 /**
- * 基本スタイル
+ * 全体のスタイル
  *
  * @format
  */
@@ -8,61 +8,55 @@ body,
 html {
   height: 100%;
   margin: 0;
+  padding: 0;
   font-family: "Arial", sans-serif;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
-#background-overlay {
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5; /* 背景画像の上に白い薄い壁紙効果 */
+}
+
+.logo-container {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.5); /* 背景の白い壁紙 */
-  z-index: 1;
+  z-index: 1000;
 }
 
-/* ロゴのスタイリング */
-#logo-container {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 2;
+.logo {
+  height: 100px; /* ロゴのサイズ調整 */
 }
 
-#logo {
-  height: 50px; /* 画像サイズは調整が必要かもしれません */
-}
-
-/* メインコンテンツのスタイリング */
-#content-container {
+.main-content {
   position: relative;
-  z-index: 3;
-  text-align: center;
+  width: 100%;
   top: 50%;
   transform: translateY(-50%);
+  text-align: center;
+  z-index: 1000;
 }
 
-#main-title {
+.title {
+  display: inline-block;
   font-size: 5em;
-  color: #000;
-  margin: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
 }
 
-/* コメントコンテナのスタイリング */
-#comments-container {
-  margin-top: 50px;
-}
-
-/* ユーザーアイコンのスタイリング */
-#user-icon-container {
+.user-icon {
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 2;
-}
-
-#user-icon {
-  height: 50px; /* 画像サイズは調整が必要かもしれません */
-  border-radius: 50%;
+  z-index: 1000;
+  /* アイコンのスタイル設定をここに追加 */
 }
