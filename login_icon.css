@@ -43,13 +43,6 @@ html {
   display: block; /* ブロック要素として表示 */
 }
 
-.icon-preview {
-  /* その他のスタイル */
-  background-size: contain; /* 画像がコンテナに収まるように調整 */
-  background-repeat: no-repeat; /* 画像を繰り返さない */
-  background-position: center; /* 画像を中央に配置 */
-}
-
 .icon-label {
   cursor: pointer;
   background-color: #4caf50;
