@@ -5,32 +5,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ログイン - RUKタクシー</title>
     <link rel="stylesheet" href="styles1.css" />
   </head>
   <body>
-    <!-- ヘッダーにRUKロゴを表示 -->
-    <div class="header">
-      <img
-        src="https://drive.google.com/uc?export=view&id=1b5kTZTW6aFGfYYV6S8DKQifRtPVTv6Nd"
-        alt="RUKロゴ"
-        class="ruk-logo" />
-    </div>
-
     <div class="login-container">
-      <!-- Googleドライブの画像を表示 -->
-      <div
-        style="
-          border: 0px solid #ffffff;
-          width: 220px;
-          height: 100px;
-          margin: 0 auto;
-          background-size: cover;
-          background-position: center;
-          background-image: url('https://drive.google.com/uc?export=view&id=15_My2HMM2_yTAUkfEmNxlWcVJt1A4Kzw');
-        "></div>
-
-      <br /><br />
-
+      <div class="logo-container">
+        <img
+          src="https://drive.google.com/uc?export=view&id=1b5kTZTW6aFGfYYV6S8DKQifRtPVTv6Nd"
+          alt="RUKロゴ"
+          class="ruk-logo" />
+      </div>
       <form id="loginForm">
         <div class="form-group">
           <label for="username">ユーザー名</label>
@@ -62,32 +47,9 @@
         <div class="form-group">
           <button type="button" id="nextButton">次へ</button>
         </div>
-
         <div class="error-message" id="error-message"></div>
       </form>
-      <!-- アイコン設定画面 -->
-      <div class="icon-setup" style="display: none">
-        <label for="iconInput" class="icon-label">
-          <div class="icon-preview" id="iconPreview" style="cursor: pointer">
-            <!-- この中に画像を設定 -->
-            <img
-              src="https://drive.google.com/file/d/15_My2HMM2_yTAUkfEmNxlWcVJt1A4Kzw/view?usp=sharing"
-              alt="アイコンプレビュー"
-              id="iconImage"
-              style="width: 100%; height: 100%" />
-          </div>
-        </label>
-        <input
-          type="file"
-          id="iconInput"
-          name="icon"
-          accept="image/*"
-          style="display: none" />
-        <button type="button" id="loginButton">ログイン</button>
-      </div>
     </div>
-    <!-- ホーム画面へのリンクは、以下のコメントに<a>タグを挿入してください。 -->
-    <!-- <a href="home.html">ホーム画面に移動</a> -->
     <script src="scripts1.js"></script>
   </body>
 </html>
