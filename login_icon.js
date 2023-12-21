@@ -17,8 +17,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (file) {
       const reader = new FileReader();
       reader.onload = function (e) {
-        iconPreview.style.backgroundImage = `url(${e.target.result})`;
-        iconImage.style.display = "none"; // 新しい画像が選択されたら元の画像を非表示にする
+        // 背景画像の代わりに img タグの src を更新
+        iconImage.src = e.target.result;
+        iconImage.style.display = "block"; // img タグを表示
+        // 背景のスタイルをクリア
+        iconPreview.style.backgroundImage = "";
+        iconPreview.style.backgroundSize = "";
+        iconPreview.style.backgroundRepeat = "";
+        iconPreview.style.backgroundPosition = "";
       };
       reader.readAsDataURL(file);
     }
