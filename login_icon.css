@@ -1,0 +1,73 @@
+/**
+ * login_icon.css
+ *
+ * @format
+ */
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #333; /* 背景色 */
+}
+
+.icon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .ruk-logo {
+  max-width: 200px; /* ロゴの最大幅を設定 */
+  margin-bottom: 30px;
+}
+
+.icon-preview {
+  width: 200px; /* アイコンプレビューの幅 */
+  height: 200px; /* アイコンプレビューの高さ */
+  margin-bottom: 20px;
+  border-radius: 50%; /* 円形にする */
+  background-color: #fff; /* 背景色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer; /* カーソルをポインターに設定 */
+  overflow: hidden; /* はみ出した画像を隠す */
+}
+
+.icon-preview img {
+  width: 100%; /* 画像をプレビューサイズに合わせる */
+  height: auto; /* 画像の高さを自動調整 */
+}
+
+.icon-label {
+  display: block;
+  background-color: #4caf50; /* ボタンの背景色 */
+  color: white; /* ボタンのテキスト色 */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#loginButton {
+  background-color: #4caf50; /* ログインボタンの背景色 */
+  color: white; /* ログインボタンのテキスト色 */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* 色のトランジション */
+}
+
+#loginButton:hover {
+  background-color: #45a049; /* ホバー時の背景色 */
+}
