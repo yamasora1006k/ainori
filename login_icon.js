@@ -17,14 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (file) {
       const reader = new FileReader();
       reader.onload = function (e) {
-        // 背景画像の代わりに img タグの src を更新
-        iconImage.src = e.target.result;
-        iconImage.style.display = "block"; // img タグを表示
-        // 背景のスタイルをクリア
-        iconPreview.style.backgroundImage = "";
-        iconPreview.style.backgroundSize = "";
-        iconPreview.style.backgroundRepeat = "";
-        iconPreview.style.backgroundPosition = "";
+        iconImage.src = e.target.result; // 画像をimgタグのsrcに設定
+        iconImage.style.display = "block"; // imgタグを表示
+        iconImage.style.width = "100%"; // 画像の幅を100%に設定
+        iconImage.style.height = "auto"; // 画像の高さを自動で設定
+        iconImage.style.objectFit = "contain"; // 画像がコンテナに収まるように調整
+        iconImage.style.borderRadius = "50%"; // 画像を円形にする
       };
       reader.readAsDataURL(file);
     }
@@ -32,14 +30,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
   loginButton.addEventListener("click", function () {
     if (!iconInput.value) {
-      // 画像が選択されていない場合はエラーメッセージを表示
       errorMessage.textContent = "アイコンが選択されていません。";
     } else {
-      // 画像が選択されている場合は、ここでログイン処理を実装
-      // 例: サーバーに画像をアップロードするコード
       errorMessage.textContent = "";
-      // ログイン処理が成功したと仮定して次のページへ遷移
-      // window.location.href = '次のページのURL';
+      // 画像が選択されている場合の処理を実装
+      // 例: サーバーへの画像アップロード処理など
+      // window.location.href = 'home.html'; // ホーム画面に移動する場合
     }
   });
 });
