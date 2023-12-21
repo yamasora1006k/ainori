@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="login_icon.css" />
   </head>
   <body>
-    <!-- RUKロゴの表示 -->
     <div class="header">
       <img
         src="https://drive.google.com/uc?export=view&id=15_My2HMM2_yTAUkfEmNxlWcVJt1A4Kzw"
@@ -17,26 +16,17 @@
         class="ruk-logo" />
     </div>
     <div class="icon-setup">
-      <!-- アイコンプレビューの表示 -->
       <div class="icon-preview" id="iconPreview">
         <img
           src="https://drive.google.com/uc?export=view&id=10_54FRcHvBo6CgWQlOI6BDGEqoLo_iuS"
           alt="アイコンプレビュー"
           id="iconImage" />
       </div>
-      <!-- アイコン選択ボタン -->
       <label for="iconInput" class="icon-label">
         アイコン選択
-        <input
-          type="file"
-          id="iconInput"
-          name="icon"
-          accept="image/*"
-          style="display: none" />
+        <input type="file" id="iconInput" name="icon" accept="image/*" hidden />
       </label>
-      <!-- ログインボタン -->
       <button type="button" id="loginButton">ログイン</button>
-      <!-- エラーメッセージ表示エリア -->
       <div class="error-message" id="error-message"></div>
     </div>
     <script src="login_icon.js"></script>

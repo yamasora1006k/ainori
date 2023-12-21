@@ -35,12 +35,16 @@ html {
   background-color: #fff; /* 背景色 */
   margin-bottom: 20px;
   position: relative; /* 位置を調整するための基点 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* はみ出した画像を隠す */
 }
 
 .icon-preview img {
-  max-width: 100%; /* 画像がコンテナに収まるようにする */
-  max-height: 100%;
-  display: block; /* ブロック要素として表示 */
+  width: auto; /* 画像の幅を自動調整 */
+  height: 100%; /* コンテナの高さに合わせる */
+  object-fit: cover; /* 画像をコンテナに合わせてトリミング */
 }
 
 .icon-label {
