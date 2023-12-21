@@ -9,67 +9,60 @@ html {
   height: 100%;
   margin: 0;
   font-family: "Arial", sans-serif;
-}
-
-/* ロゴと背景画像のスタイリング */
-.logo-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.background-image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
 }
 
-.background-image {
-  width: 100%;
-  height: auto;
-  opacity: 0.5; /* 背景画像に薄い白をかける */
+#background-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5); /* 背景の白い壁紙 */
+  z-index: 1;
 }
 
-/* NORITAKUリンクのスタイリング */
-.noritaku-container {
+/* ロゴのスタイリング */
+#logo-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2em;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+#logo {
+  height: 50px; /* 画像サイズは調整が必要かもしれません */
+}
+
+/* メインコンテンツのスタイリング */
+#content-container {
+  position: relative;
+  z-index: 3;
   text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.noritaku-link {
+#main-title {
+  font-size: 5em;
   color: #000;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.7);
-  padding: 0.5em 1em;
-  border-radius: 5px;
+  margin: 0;
 }
 
-/* コメントセクションのスタイリング */
-.comments-section {
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  right: 5%;
+/* コメントコンテナのスタイリング */
+#comments-container {
+  margin-top: 50px;
 }
 
 /* ユーザーアイコンのスタイリング */
-.user-icon-container {
+#user-icon-container {
   position: absolute;
   top: 10px;
   right: 10px;
+  z-index: 2;
 }
 
-.user-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%; /* アイコンを丸く表示 */
+#user-icon {
+  height: 50px; /* 画像サイズは調整が必要かもしれません */
+  border-radius: 50%;
 }
