@@ -11,21 +11,46 @@ html {
   padding: 0;
   font-family: "Arial", sans-serif;
   background: url("your_background_image_link_here") no-repeat center center
-    fixed;
+    fixed; /* ここに背景画像リンクを挿入 */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
 
-#background-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.5); /* 背景の白い壁紙効果 */
-  z-index: 1;
+/* ヘッダーとロゴのスタイル */
+header {
+  text-align: left;
+  padding: 10px;
 }
 
-/* ここから他のスタイル */
+#logo {
+  height: 60px; /* ロゴのサイズ調整 */
+}
+
+/* メインコンテンツのスタイル */
+main {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+#main-title {
+  font-size: 4em; /* タイトルのフォントサイズ調整 */
+  color: #000;
+  cursor: pointer;
+}
+
+/* ユーザーアイコンのスタイル */
+aside {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#user-icon {
+  height: 50px; /* アイコンのサイズ調整 */
+  cursor: pointer;
+}
