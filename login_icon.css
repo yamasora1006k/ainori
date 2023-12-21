@@ -4,70 +4,64 @@
  * @format
  */
 
+/* 共通スタイル */
 body,
 html {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #333; /* 背景色 */
+  background-color: #333;
 }
 
-.icon-container {
-  width: 100%;
-  height: 100%;
+.header .ruk-logo {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 100px; /* ロゴの幅 */
+}
+
+.icon-setup {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.header .ruk-logo {
-  max-width: 200px; /* ロゴの最大幅を設定 */
-  margin-bottom: 30px;
+  height: 100%;
 }
 
 .icon-preview {
-  width: 200px; /* アイコンプレビューの幅 */
-  height: 200px; /* アイコンプレビューの高さ */
-  margin-bottom: 20px;
+  width: 200px; /* アイコンの幅 */
+  height: 200px; /* アイコンの高さ */
   border-radius: 50%; /* 円形にする */
   background-color: #fff; /* 背景色 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer; /* カーソルをポインターに設定 */
-  overflow: hidden; /* はみ出した画像を隠す */
+  margin-bottom: 20px;
+  position: relative; /* 位置を調整するための基点 */
 }
 
 .icon-preview img {
-  width: 100%; /* 画像をプレビューサイズに合わせる */
-  height: auto; /* 画像の高さを自動調整 */
+  max-width: 100%; /* 画像がコンテナに収まるようにする */
+  max-height: 100%;
+  display: block; /* ブロック要素として表示 */
 }
 
 .icon-label {
-  display: block;
-  background-color: #4caf50; /* ボタンの背景色 */
-  color: white; /* ボタンのテキスト色 */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  text-align: center;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
   margin-bottom: 20px;
 }
 
-#loginButton {
-  background-color: #4caf50; /* ログインボタンの背景色 */
-  color: white; /* ログインボタンのテキスト色 */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+button#loginButton {
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease; /* 色のトランジション */
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 
-#loginButton:hover {
-  background-color: #45a049; /* ホバー時の背景色 */
+.error-message {
+  color: red;
+  height: 20px;
 }
