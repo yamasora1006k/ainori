@@ -17,14 +17,51 @@
         class="ruk-logo" />
     </div>
     <div class="login-container">
-      <!-- ログインフォーム -->
+      <!-- ログインフォームの各フィールド -->
       <form id="loginForm">
-        <!-- フォームの各フィールド -->
+        <!-- ユーザー名入力フィールド -->
+        <div class="form-group">
+          <label for="username">ユーザー名</label>
+          <input type="text" id="username" name="username" required />
+        </div>
+        <!-- アドレス入力フィールド -->
+        <div class="form-group">
+          <label for="address">アドレス</label>
+          <input type="email" id="address" name="address" required />
+        </div>
+        <!-- パスワード入力フィールド -->
+        <div class="form-group">
+          <label for="password">パスワード</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <!-- パスワード確認入力フィールド -->
+        <div class="form-group">
+          <label for="passwordConfirm">パスワード確認</label>
+          <input
+            type="password"
+            id="passwordConfirm"
+            name="passwordConfirm"
+            required />
+        </div>
+        <!-- パスワード記憶チェックボックス -->
+        <div class="form-group">
+          <label for="rememberPassword">パスワードを記憶する</label>
+          <input
+            type="checkbox"
+            id="rememberPassword"
+            name="rememberPassword" />
+        </div>
+        <!-- 次へボタン -->
+        <div class="form-group">
+          <button type="button" id="nextButton">次へ</button>
+        </div>
+        <!-- エラーメッセージ表示エリア -->
+        <div class="error-message" id="error-message"></div>
       </form>
       <!-- アイコン設定画面 -->
       <div class="icon-setup" style="display: none">
         <!-- アイコンクリックでファイル選択ができるようにする -->
-        <label for="iconInput" class="icon-label">
+        <label for="iconInput">
           <div class="icon-preview" id="iconPreview" style="cursor: pointer">
             <!-- Googleドライブからのアイコン画像を表示 -->
             <img
@@ -45,6 +82,6 @@
     </div>
     <!-- ホーム画面へのリンク -->
     <!-- <a href="home.html">ホーム画面に移動</a> -->
-    <script src="script1.js"></script>
+    <script src="scripts1.js"></script>
   </body>
 </html>
