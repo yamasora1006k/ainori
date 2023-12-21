@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
       errorMessage.textContent = "";
       // 画像が選択されている場合の処理を実装
       // 例: サーバーへの画像アップロード処理など
-      // window.location.href = 'home.html'; // ホーム画面に移動する場合
+      window.location.href = "index.html";
     }
   });
 });
