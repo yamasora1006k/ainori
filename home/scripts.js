@@ -1,25 +1,9 @@
 /** @format */
 
+
 var rides = []; // 乗り合い情報を保持する配列
 
-document.addEventListener("DOMContentLoaded", function () {
-  var loggedInUser = localStorage.getItem("loggedInUser");
-  if (loggedInUser) {
-    document.getElementById("loginSection").style.display = "none";
-    document.getElementById("app").style.display = "block";
-  }
-});
 
-document.getElementById("loginBtn").addEventListener("click", function () {
-  var username = document.getElementById("username").value;
-  if (username.trim() !== "") {
-    localStorage.setItem("loggedInUser", username);
-    document.getElementById("loginSection").style.display = "none";
-    document.getElementById("app").style.display = "block";
-  } else {
-    alert("ユーザー名を入力してください。");
-  }
-});
 
 document.getElementById("locationType").addEventListener("change", function () {
   var locationType = document.getElementById("locationType").value;
@@ -27,6 +11,7 @@ document.getElementById("locationType").addEventListener("change", function () {
     document.getElementById("inTownOptions").style.display = "block";
   } else {
     document.getElementById("inTownOptions").style.display = "none";
+    document.getElementById("customDestination").placeholder = "具体的な目的地"
   }
 });
 
@@ -40,6 +25,8 @@ document
     // 以前の選択肢をクリアする
     inTownSelection.innerHTML = "";
     otherInTown.style.display = "none";
+    document.getElementById("customDestination").style.display = "none"
+    inTownSelection.style.display = "none";
 
     if (category === "hospital") {
       var hospitals = [
@@ -104,6 +91,8 @@ document
         inTownSelection.appendChild(option);
       });
       inTownSelection.style.display = "block";
+    } else if (category == "other"){
+      document.getElementById("customDestination").style.display = "block"
     } else {
       inTownSelection.style.display = "none";
     }
@@ -112,7 +101,7 @@ document
 document.getElementById("searchBtn").addEventListener("click", function () {
   var departureArea = document.getElementById("departureArea").value;
   var customDeparture = document.getElementById("customDeparture").value;
-  var destination = document.getElementById("destination").value;
+  var destination = document.getElementById("customDestination").value;
   var departureTimeInput = document.getElementById("departureTime").value;
   var riders = document.getElementById("riders").value;
 
@@ -161,6 +150,6 @@ document.getElementById("searchBtn").addEventListener("click", function () {
   // フォームをクリアする
   document.getElementById("departureArea").value = "";
   document.getElementById("customDeparture").value = "";
-  document.getElementById("destination").value = "";
+  document.getElementById("customDestination").value = "";
   document.getElementById("departureTime").value = "";
 });

@@ -8,6 +8,26 @@ body {
   background-color: #f4f4f4;
 }
 
+header {
+  width: 100%;
+  padding: 0px 20px 0px 20px;
+  position: fixed;
+  background-color: rgb( 255,255,255,0.3);
+}
+
+h1,
+h2 {
+  margin: 15px;
+  color: #333;
+  left: 50%;
+  text-align: center;
+}
+
+header img{
+  width: 5rem;
+  padding: 10px;
+}
+
 #entrance{
   width: 100%;
   position: relative;
@@ -28,20 +48,7 @@ body {
   font-family: "ヒラギノ丸ゴ ProN";
 }
 
-header {
-  width: 100%;
-  padding: 0px 20px 0px 20px;
-  position: fixed;
-  background-color: rgb( 255,255,255,0.3);
-}
 
-
-
-h1,
-h2 {
-  margin: 15px;
-  color: #333;
-}
 
 #app,
 #loginSection {
