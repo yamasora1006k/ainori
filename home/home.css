@@ -25,14 +25,14 @@ body {
   left: 50%;
   font-size: 2rem;
   transform: translate(-50%, -50%);
-
+  font-family: "ヒラギノ丸ゴ ProN";
 }
 
 header {
   width: 100%;
   padding: 0px 20px 0px 20px;
   position: fixed;
-  background-color: rgb( 255,255,255,0.1);
+  background-color: rgb( 255,255,255,0.3);
 }
 
 

@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // バリデーションが成功した場合にのみ、次の画面へ遷移させる。
     if (validateInputs()) {
       // バリデーション成功時の処理。例えば、次のステップへ進むためのコードをここに追加します。
-      window.location.href = "./login_icon/login_icon.html"; // アイコン設定ページに遷移する
+      window.location.href = "../login_icon/login_icon.html"; // アイコン設定ページに遷移する
     } else {
       // バリデーション失敗時のエラーメッセージを表示する。
       errorMessageDiv.textContent = "入力に誤りがあります。";
