@@ -1,56 +1,87 @@
-/**
- * 全体のスタイル
- *
- * @format
- */
+/** @format */
 
-body,
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+
+body {
   font-family: "Arial", sans-serif;
-  background: url("your_background_image_link_here") no-repeat center center
-    fixed; /* ここに背景画像リンクを挿入 */
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  margin: 0;
+  padding: 0px;
+  background-color: #f4f4f4;
 }
 
-/* ヘッダーとロゴのスタイル */
-header {
-  text-align: left;
-  padding: 10px;
-}
-
-#logo {
-  height: 60px; /* ロゴのサイズ調整 */
-}
-
-/* メインコンテンツのスタイル */
-main {
-  position: absolute;
+#entrance{
   width: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+#entrance img{
+  width: 100%;
+}
+
+#entrance h2{
+  width: max-content;
+  position:absolute;
   top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
+  left: 50%;
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
+
 }
 
-#main-title {
-  font-size: 4em; /* タイトルのフォントサイズ調整 */
-  color: #000;
+header {
+  width: 100%;
+  padding: 0px 20px 0px 20px;
+  position: fixed;
+  background-color: rgb( 255,255,255,0.1);
+}
+
+
+
+h1,
+h2 {
+  margin: 15px;
+  color: #333;
+}
+
+#app,
+#loginSection {
+  max-width: 600px;
+  margin: auto;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
-/* ユーザーアイコンのスタイル */
-aside {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+button:hover {
+  opacity: 0.8;
 }
 
-#user-icon {
-  height: 50px; /* アイコンのサイズ調整 */
-  cursor: pointer;
+ul {
+  list-style: none;
+  padding: 0;
 }
+
+li {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
