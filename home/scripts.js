@@ -1,9 +1,6 @@
 /** @format */
 
-
 var rides = []; // 乗り合い情報を保持する配列
-
-
 
 document.getElementById("locationType").addEventListener("change", function () {
   var locationType = document.getElementById("locationType").value;
@@ -11,7 +8,7 @@ document.getElementById("locationType").addEventListener("change", function () {
     document.getElementById("inTownOptions").style.display = "block";
   } else {
     document.getElementById("inTownOptions").style.display = "none";
-    document.getElementById("customDestination").placeholder = "具体的な目的地"
+    document.getElementById("customDestination").placeholder = "具体的な目的地";
   }
 });
 
@@ -25,11 +22,12 @@ document
     // 以前の選択肢をクリアする
     inTownSelection.innerHTML = "";
     otherInTown.style.display = "none";
-    document.getElementById("customDestination").style.display = "none"
+    document.getElementById("customDestination").style.display = "none";
     inTownSelection.style.display = "none";
 
     if (category === "hospital") {
       var hospitals = [
+        "---",
         "神山病院",
         "中谷病院",
         "佐々木外科内科",
@@ -46,6 +44,7 @@ document
     } else if (category === "pharmacy") {
       // 薬局の選択肢を追加
       var pharmacies = [
+        "---",
         "エンゼル調剤薬局",
         "大草ドラッグ",
         "大黒屋",
@@ -60,6 +59,7 @@ document
       inTownSelection.style.display = "block";
     } else if (category === "care_center") {
       var careCenters = [
+        "---",
         "神山すだち園 特別養護老人ホーム",
         "寿泉園 養護老人ホーム",
         "かじかの郷 介護老人保健施設",
@@ -76,6 +76,7 @@ document
       inTownSelection.style.display = "block";
     } else if (category === "post_office") {
       var post_officies = [
+        "---",
         "神山郵便局",
         "寄井郵便局",
         "今井郵便局",
@@ -91,8 +92,8 @@ document
         inTownSelection.appendChild(option);
       });
       inTownSelection.style.display = "block";
-    } else if (category == "other"){
-      document.getElementById("customDestination").style.display = "block"
+    } else if (category == "other") {
+      document.getElementById("customDestination").style.display = "block";
     } else {
       inTownSelection.style.display = "none";
     }
