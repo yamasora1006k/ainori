@@ -40,12 +40,33 @@ document
         "山田歯科病院",
         "COCO歯科",
       ];
-      hospitals.forEach(function (hospital) {
+      hospitals.forEach(function (hospital, index) {
         var option = document.createElement("option");
         option.value = hospital;
         option.textContent = hospital;
+        // 「---」オプションには特別なIDを付与
+        if (index === 0) {
+          option.id = "default-option";
+        }
         inTownSelection.appendChild(option);
       });
+
+      // ドロップダウンがフォーカスされたときに「---」オプションを隠す
+      inTownSelection.addEventListener("focus", function () {
+        var defaultOption = document.getElementById("default-option");
+        if (defaultOption) {
+          defaultOption.style.display = "none";
+        }
+      });
+
+      // ドロップダウンからフォーカスが外れたときに「---」オプションを再表示する
+      inTownSelection.addEventListener("blur", function () {
+        var defaultOption = document.getElementById("default-option");
+        if (defaultOption) {
+          defaultOption.style.display = "block";
+        }
+      });
+
       inTownSelection.style.display = "block";
     } else if (category === "pharmacy") {
       // 薬局の選択肢を追加
@@ -56,12 +77,33 @@ document
         "大黒屋",
         "橋本薬品",
       ];
-      pharmacies.forEach(function (pharmacy) {
+      pharmacies.forEach(function (pharmacy, index) {
         var option = document.createElement("option");
         option.value = pharmacy;
         option.textContent = pharmacy;
+        // 「---」オプションには特別なIDを付与
+        if (index === 0) {
+          option.id = "default-option-pharmacy";
+        }
         inTownSelection.appendChild(option);
       });
+
+      // ドロップダウンがフォーカスされたときに「---」オプションを隠す
+      inTownSelection.addEventListener("focus", function () {
+        var defaultOption = document.getElementById("default-option-pharmacy");
+        if (defaultOption) {
+          defaultOption.style.display = "none";
+        }
+      });
+
+      // ドロップダウンからフォーカスが外れたときに「---」オプションを再表示する
+      inTownSelection.addEventListener("blur", function () {
+        var defaultOption = document.getElementById("default-option-pharmacy");
+        if (defaultOption) {
+          defaultOption.style.display = "block";
+        }
+      });
+
       inTownSelection.style.display = "block";
     } else if (category === "care_center") {
       // 介護センターの選択肢を追加
@@ -74,12 +116,37 @@ document
         "地域包括支援センター",
         "高齢者生産活動センター",
       ];
-      careCenters.forEach(function (careCenter) {
+      careCenters.forEach(function (careCenter, index) {
         var option = document.createElement("option");
         option.value = careCenter;
         option.textContent = careCenter;
+        // 「---」オプションには特別なIDを付与
+        if (index === 0) {
+          option.id = "default-option-care-center";
+        }
         inTownSelection.appendChild(option);
       });
+
+      // ドロップダウンがフォーカスされたときに「---」オプションを隠す
+      inTownSelection.addEventListener("focus", function () {
+        var defaultOption = document.getElementById(
+          "default-option-care-center"
+        );
+        if (defaultOption) {
+          defaultOption.style.display = "none";
+        }
+      });
+
+      // ドロップダウンからフォーカスが外れたときに「---」オプションを再表示する
+      inTownSelection.addEventListener("blur", function () {
+        var defaultOption = document.getElementById(
+          "default-option-care-center"
+        );
+        if (defaultOption) {
+          defaultOption.style.display = "block";
+        }
+      });
+
       inTownSelection.style.display = "block";
     } else if (category === "post_office") {
       // 郵便局の選択肢を追加
@@ -93,12 +160,37 @@ document
         "阿野郵便局",
         "広野郵便局",
       ];
-      post_offices.forEach(function (post_office) {
+      post_offices.forEach(function (post_office, index) {
         var option = document.createElement("option");
         option.value = post_office;
         option.textContent = post_office;
+        // 「---」オプションには特別なIDを付与
+        if (index === 0) {
+          option.id = "default-option-post-office";
+        }
         inTownSelection.appendChild(option);
       });
+
+      // ドロップダウンがフォーカスされたときに「---」オプションを隠す
+      inTownSelection.addEventListener("focus", function () {
+        var defaultOption = document.getElementById(
+          "default-option-post-office"
+        );
+        if (defaultOption) {
+          defaultOption.style.display = "none";
+        }
+      });
+
+      // ドロップダウンからフォーカスが外れたときに「---」オプションを再表示する
+      inTownSelection.addEventListener("blur", function () {
+        var defaultOption = document.getElementById(
+          "default-option-post-office"
+        );
+        if (defaultOption) {
+          defaultOption.style.display = "block";
+        }
+      });
+
       inTownSelection.style.display = "block";
     } else if (category === "other") {
       // その他のカテゴリが選択された場合、カスタム目的地入力フィールドを表示
