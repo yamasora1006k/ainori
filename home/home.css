@@ -1,6 +1,5 @@
 /** @format */
 
-
 body {
   font-family: "Arial", sans-serif;
   margin: 0;
@@ -12,7 +11,7 @@ header {
   width: 100%;
   padding: 0px 20px 0px 20px;
   position: fixed;
-  background-color: rgb( 255,255,255,0.3);
+  background-color: rgb(255, 255, 255, 0.3);
 }
 
 h1,
@@ -23,24 +22,24 @@ h2 {
   text-align: center;
 }
 
-header img{
+header img {
   width: 5rem;
   padding: 10px;
 }
 
-#entrance{
+#entrance {
   width: 100%;
   position: relative;
   z-index: -1;
 }
 
-#entrance img{
+#entrance img {
   width: 100%;
 }
 
-#entrance h2{
+#entrance h2 {
   width: max-content;
-  position:absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   font-size: 2rem;
@@ -48,7 +47,15 @@ header img{
   font-family: "ヒラギノ丸ゴ ProN";
 }
 
+#app {
+  background-image: url("./home/乗りたくの背景.png"); /* 画像のパスを指定 */
+  background-size: auto; /* 背景画像をディビジョンに合わせて自動調整 */
+  background-repeat: no-repeat; /* 画像を繰り返さないように設定 */
+}
 
+#app * {
+  background-color: rgba(255, 255, 255, 0.8); /* 要素の背景に半透明の白を設定 */
+}
 
 #app,
 #loginSection {
@@ -91,4 +98,3 @@ li {
   padding: 10px;
   border: 1px solid #ccc;
 }
-
