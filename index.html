@@ -7,6 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ホーム画面</title>
     <link rel="stylesheet" href="./home/home.css" />
+    <script>
+      function hideDefaultOption(selectElement) {
+        var defaultOption = selectElement.options[0];
+        if (defaultOption.value === "---") {
+          defaultOption.style.display = "none";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var selectElements = document.querySelectorAll("select");
+        selectElements.forEach(function (selectElement) {
+          selectElement.addEventListener("focus", function () {
+            hideDefaultOption(selectElement);
+          });
+        });
+      });
+    </script>
   </head>
   <body>
     <header>
@@ -20,7 +37,6 @@
         NORITAKUへようこそ
       </h2>
     </div>
-
     <div id="app">
       <section>
         <br /><br /><br />
@@ -73,34 +89,21 @@
           required />
         <input type="datetime-local" id="departureTime" required />
 
-        <select id="riders" onfocus="hideDefaultOption()">
+        <select id="riders">
           <option value="---" selected>---</option>
           <option value="1">1人</option>
           <option value="2">2人</option>
           <option value="3">3人</option>
         </select>
 
-        <script>
-          function hideDefaultOption() {
-            var ridersSelect = document.getElementById("riders");
-            var defaultOption = ridersSelect.options[0];
-
-            // この条件を追加して、フォーカスが当たったときにのみ実行されるようにします
-            if (ridersSelect.selectedIndex === 0) {
-              defaultOption.style.display = "none";
-            }
-          }
-        </script>
         <button id="searchBtn">乗り合い検索</button>
       </section>
       <section>
         <h2>募集中のリスト</h2>
         <ul id="rideList"></ul>
       </section>
-      <!-- 仮のマップ表示エリア -->
       <div id="map" style="width: 100%; height: 400px"></div>
     </div>
-
     <script src="./home/scripts.js"></script>
   </body>
 </html>
