@@ -2,16 +2,20 @@
 
 var rides = []; // 乗り合い情報を保持する配列
 
+// 場所のタイプが変更されたときのイベントリスナー
 document.getElementById("locationType").addEventListener("change", function () {
   var locationType = document.getElementById("locationType").value;
   if (locationType === "town") {
+    // 場所のタイプが「town」の場合、町内オプションを表示
     document.getElementById("inTownOptions").style.display = "block";
   } else {
+    // それ以外の場合、町内オプションを非表示にし、カスタム目的地のプレースホルダーを設定
     document.getElementById("inTownOptions").style.display = "none";
     document.getElementById("customDestination").placeholder = "具体的な目的地";
   }
 });
 
+// 町内カテゴリが変更されたときのイベントリスナー
 document
   .getElementById("inTownCategories")
   .addEventListener("change", function () {
@@ -25,7 +29,9 @@ document
     document.getElementById("customDestination").style.display = "none";
     inTownSelection.style.display = "none";
 
+    // カテゴリに応じて、対応する選択肢を動的に生成
     if (category === "hospital") {
+      // 病院の選択肢を追加
       var hospitals = [
         "---",
         "神山病院",
@@ -58,6 +64,7 @@ document
       });
       inTownSelection.style.display = "block";
     } else if (category === "care_center") {
+      // 介護センターの選択肢を追加
       var careCenters = [
         "---",
         "神山すだち園 特別養護老人ホーム",
@@ -75,7 +82,8 @@ document
       });
       inTownSelection.style.display = "block";
     } else if (category === "post_office") {
-      var post_officies = [
+      // 郵便局の選択肢を追加
+      var post_offices = [
         "---",
         "神山郵便局",
         "寄井郵便局",
@@ -85,27 +93,34 @@ document
         "阿野郵便局",
         "広野郵便局",
       ];
-      post_officies.forEach(function (post_officies) {
+      post_offices.forEach(function (post_office) {
         var option = document.createElement("option");
-        option.value = post_officies;
-        option.textContent = post_officies;
+        option.value = post_office;
+        option.textContent = post_office;
         inTownSelection.appendChild(option);
       });
       inTownSelection.style.display = "block";
-    } else if (category == "other") {
+    } else if (category === "other") {
+      // その他のカテゴリが選択された場合、カスタム目的地入力フィールドを表示
       document.getElementById("customDestination").style.display = "block";
-    } else {
+    }
+
+    // その他の場合、選択リストを非表示にする
+    else {
       inTownSelection.style.display = "none";
     }
   });
 
+// 検索ボタンクリック時のイベントリスナー
 document.getElementById("searchBtn").addEventListener("click", function () {
+  // 入力値を取得
   var departureArea = document.getElementById("departureArea").value;
   var customDeparture = document.getElementById("customDeparture").value;
   var destination = document.getElementById("customDestination").value;
   var departureTimeInput = document.getElementById("departureTime").value;
   var riders = document.getElementById("riders").value;
 
+  // 必須項目のチェック
   if (
     departureArea.trim() === "" ||
     customDeparture.trim() === "" ||
@@ -116,24 +131,27 @@ document.getElementById("searchBtn").addEventListener("click", function () {
     return;
   }
 
+  // 出発時間の処理（タイムゾーンのオフセットを修正）
   var departureTime = new Date(departureTimeInput);
   departureTime.setMinutes(
     departureTime.getMinutes() - departureTime.getTimezoneOffset()
-  ); // タイムゾーンのオフセットを修正
+  );
   var timeRange = 30; // 時間範囲を30分に設定
-  var rideList = document.getElementById("rideList");
 
+  // 乗り合い情報の検索
   var matchedRide = rides.find(function (ride) {
     var rideDepartureTime = new Date(ride.departureTime);
     var timeDifference = Math.abs(rideDepartureTime - departureTime) / 60000; // 分単位で差分を計算
     return ride.destination === destination && timeDifference <= timeRange;
   });
 
+  // マッチする乗り合いがある場合の処理
   if (matchedRide) {
     alert(
       `マッチする乗り合いが見つかりました：出発地: ${matchedRide.departureArea}, 目的地: ${matchedRide.destination}, 出発時間: ${matchedRide.departureTime}, 乗車希望者: ${matchedRide.riders}`
     );
   } else {
+    // マッチする乗り合いがない場合、新たな乗り合い情報を追加
     var newRide = {
       departureArea,
       customDeparture,
@@ -142,6 +160,8 @@ document.getElementById("searchBtn").addEventListener("click", function () {
       riders,
     };
     rides.push(newRide);
+
+    // 乗り合い情報をリストに表示
     var listItem = document.createElement("li");
     listItem.textContent = `出発地区: ${departureArea}, 出発地: ${customDeparture}, 目的地: ${destination}, 出発時間: ${departureTime.toLocaleString()}, 乗車希望者: ${riders}人`;
     rideList.appendChild(listItem);
