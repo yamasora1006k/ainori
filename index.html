@@ -69,12 +69,24 @@
           required />
         <input type="datetime-local" id="departureTime" required />
 
-        <select id="riders">
+        <select id="riders" onfocus="hideDefaultOption()">
           <option value="---" selected>---</option>
           <option value="1">1人</option>
           <option value="2">2人</option>
           <option value="3">3人</option>
         </select>
+
+        <script>
+          function hideDefaultOption() {
+            var ridersSelect = document.getElementById("riders");
+            var defaultOption = ridersSelect.options[0];
+
+            // この条件を追加して、フォーカスが当たったときにのみ実行されるようにします
+            if (ridersSelect.selectedIndex === 0) {
+              defaultOption.style.display = "none";
+            }
+          }
+        </script>
         <button id="searchBtn">乗り合い検索</button>
       </section>
       <section>
