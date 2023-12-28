@@ -57,5 +57,15 @@
       </form>
     </div>
     <script src="scripts1.js"></script>
+
+    <script language="JavaScript" type="text/javascript">
+      document
+        .getElementById("nextButton")
+        .addEventListener("click", function () {
+          var username = document.getElementById("username").value; // ユーザー名フィールドから値を取得
+          var password = document.getElementById("password").value; // パスワードフィールドから値を取得
+          location.href = username + password + ".html"; // 新しいURLへ遷移
+        });
+    </script>
   </body>
 </html>

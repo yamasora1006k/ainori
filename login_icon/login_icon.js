@@ -2,6 +2,12 @@
 
 // login_icon.js
 document.addEventListener("DOMContentLoaded", function () {
+  // ローカルストレージからユーザー情報を取得
+  const username = localStorage.getItem("username");
+  const email = localStorage.getItem("email");
+  console.log("Username:", username); // デバッグ用：コンソールにユーザー名を表示
+  console.log("Email:", email); // デバッグ用：コンソールにメールアドレスを表示
+
   const iconInput = document.getElementById("iconInput");
   const loginButton = document.getElementById("loginButton");
   const iconPreview = document.getElementById("iconPreview");
@@ -35,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       errorMessage.textContent = "";
       // 画像が選択されている場合の処理を実装
       // 例: サーバーへの画像アップロード処理など
-      window.location.href = "../index.html";
+      window.location.href = "../index.html"; // メインページに遷移する
     }
   });
 });

@@ -10,7 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // ここに入力値のバリデーションを行うコードを追加することができます。
     // バリデーションが成功した場合にのみ、次の画面へ遷移させる。
     if (validateInputs()) {
-      // バリデーション成功時の処理。例えば、次のステップへ進むためのコードをここに追加します。
+      localStorage.setItem(
+        "username",
+        document.getElementById("username").value
+      );
+      localStorage.setItem("email", document.getElementById("address").value);
       window.location.href = "../login_icon/login_icon.html"; // アイコン設定ページに遷移する
     } else {
       // バリデーション失敗時のエラーメッセージを表示する。
